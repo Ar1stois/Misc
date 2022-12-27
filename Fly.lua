@@ -38,9 +38,6 @@ repeat
 wait()
 localplayer.Character.Humanoid.PlatformStand=true
 local new=gyro.cframe - gyro.cframe.p + pos.position
-if not keys.w and not keys.s and not keys.a and not keys.d then
-getgenv().FlySpeed
-end
 if keys.w then
 new = new + workspace.CurrentCamera.CoordinateFrame.lookVector * getgenv().FlySpeed
 getgenv().FlySpeed=getgenv().FlySpeed+0
@@ -56,9 +53,6 @@ end
 if keys.a then
 new = new * CFrame.new(-getgenv().FlySpeed,0,0)
 getgenv().FlySpeed=getgenv().FlySpeed+0
-end
-if getgenv().FlySpeed>10 then
-getgenv().FlySpeed=5
 end
 pos.position=new.p
 if keys.w then
